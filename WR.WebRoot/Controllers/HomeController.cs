@@ -10,6 +10,7 @@ namespace WR.WebRoot.Controllers
     {
         public ActionResult Index()
         {
+            Tools.Logger.Error("ss");
             return View();
         }
 
