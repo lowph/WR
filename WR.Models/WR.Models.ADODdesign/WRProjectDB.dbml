@@ -1,10 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="WRPROJECT" Class="WRProjectDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=47.106.105.168;Initial Catalog=WRPROJECT;Persist Security Info=True;User ID=phproject" SettingsObjectName="WR.Models.ADODdesign.Properties.Settings" SettingsPropertyName="WRPROJECTConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.项目执行" Member="项目执行">
+    <Type Name="项目执行">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="人员ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="项目ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="人日" Type="System.Decimal" DbType="Decimal(3,1) NOT NULL" CanBeNull="false" />
+      <Column Name="开始时间" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="结束时间" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="评价" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="评价描述" Type="System.String" DbType="NChar(500)" CanBeNull="true" />
+      <Column Name="完成标识" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.项目信息" Member="项目信息">
+    <Type Name="项目信息">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="上级ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="名称" Type="System.String" DbType="NChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="启用标识" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="创建时间" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="项目信息_项目信息" Member="上级项目信息" Storage="_项目信息1" ThisKey="上级ID" OtherKey="ID" Type="项目信息" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.人员信息" Member="人员信息">
     <Type Name="人员信息">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="姓名" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="启用标识" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="简拼" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

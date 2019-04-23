@@ -30,6 +30,12 @@ namespace WR.Models.ADODdesign
 		
     #region 可扩展性方法定义
     partial void OnCreated();
+    partial void Insert项目执行(项目执行 instance);
+    partial void Update项目执行(项目执行 instance);
+    partial void Delete项目执行(项目执行 instance);
+    partial void Insert项目信息(项目信息 instance);
+    partial void Update项目信息(项目信息 instance);
+    partial void Delete项目信息(项目信息 instance);
     partial void Insert人员信息(人员信息 instance);
     partial void Update人员信息(人员信息 instance);
     partial void Delete人员信息(人员信息 instance);
@@ -65,11 +71,464 @@ namespace WR.Models.ADODdesign
 			OnCreated();
 		}
 		
+		public System.Data.Linq.Table<项目执行> 项目执行
+		{
+			get
+			{
+				return this.GetTable<项目执行>();
+			}
+		}
+		
+		public System.Data.Linq.Table<项目信息> 项目信息
+		{
+			get
+			{
+				return this.GetTable<项目信息>();
+			}
+		}
+		
 		public System.Data.Linq.Table<人员信息> 人员信息
 		{
 			get
 			{
 				return this.GetTable<人员信息>();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.项目执行")]
+	public partial class 项目执行 : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _人员ID;
+		
+		private int _项目ID;
+		
+		private decimal _人日;
+		
+		private System.DateTime _开始时间;
+		
+		private System.DateTime _结束时间;
+		
+		private bool _评价;
+		
+		private string _评价描述;
+		
+		private bool _完成标识;
+		
+    #region 可扩展性方法定义
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void On人员IDChanging(int value);
+    partial void On人员IDChanged();
+    partial void On项目IDChanging(int value);
+    partial void On项目IDChanged();
+    partial void On人日Changing(decimal value);
+    partial void On人日Changed();
+    partial void On开始时间Changing(System.DateTime value);
+    partial void On开始时间Changed();
+    partial void On结束时间Changing(System.DateTime value);
+    partial void On结束时间Changed();
+    partial void On评价Changing(bool value);
+    partial void On评价Changed();
+    partial void On评价描述Changing(string value);
+    partial void On评价描述Changed();
+    partial void On完成标识Changing(bool value);
+    partial void On完成标识Changed();
+    #endregion
+		
+		public 项目执行()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_人员ID", DbType="Int NOT NULL")]
+		public int 人员ID
+		{
+			get
+			{
+				return this._人员ID;
+			}
+			set
+			{
+				if ((this._人员ID != value))
+				{
+					this.On人员IDChanging(value);
+					this.SendPropertyChanging();
+					this._人员ID = value;
+					this.SendPropertyChanged("人员ID");
+					this.On人员IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_项目ID", DbType="Int NOT NULL")]
+		public int 项目ID
+		{
+			get
+			{
+				return this._项目ID;
+			}
+			set
+			{
+				if ((this._项目ID != value))
+				{
+					this.On项目IDChanging(value);
+					this.SendPropertyChanging();
+					this._项目ID = value;
+					this.SendPropertyChanged("项目ID");
+					this.On项目IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_人日", DbType="Decimal(3,1) NOT NULL")]
+		public decimal 人日
+		{
+			get
+			{
+				return this._人日;
+			}
+			set
+			{
+				if ((this._人日 != value))
+				{
+					this.On人日Changing(value);
+					this.SendPropertyChanging();
+					this._人日 = value;
+					this.SendPropertyChanged("人日");
+					this.On人日Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_开始时间", DbType="Date NOT NULL")]
+		public System.DateTime 开始时间
+		{
+			get
+			{
+				return this._开始时间;
+			}
+			set
+			{
+				if ((this._开始时间 != value))
+				{
+					this.On开始时间Changing(value);
+					this.SendPropertyChanging();
+					this._开始时间 = value;
+					this.SendPropertyChanged("开始时间");
+					this.On开始时间Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_结束时间", DbType="Date NOT NULL")]
+		public System.DateTime 结束时间
+		{
+			get
+			{
+				return this._结束时间;
+			}
+			set
+			{
+				if ((this._结束时间 != value))
+				{
+					this.On结束时间Changing(value);
+					this.SendPropertyChanging();
+					this._结束时间 = value;
+					this.SendPropertyChanged("结束时间");
+					this.On结束时间Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_评价", DbType="Bit NOT NULL")]
+		public bool 评价
+		{
+			get
+			{
+				return this._评价;
+			}
+			set
+			{
+				if ((this._评价 != value))
+				{
+					this.On评价Changing(value);
+					this.SendPropertyChanging();
+					this._评价 = value;
+					this.SendPropertyChanged("评价");
+					this.On评价Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_评价描述", DbType="NChar(500)")]
+		public string 评价描述
+		{
+			get
+			{
+				return this._评价描述;
+			}
+			set
+			{
+				if ((this._评价描述 != value))
+				{
+					this.On评价描述Changing(value);
+					this.SendPropertyChanging();
+					this._评价描述 = value;
+					this.SendPropertyChanged("评价描述");
+					this.On评价描述Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_完成标识", DbType="Bit NOT NULL")]
+		public bool 完成标识
+		{
+			get
+			{
+				return this._完成标识;
+			}
+			set
+			{
+				if ((this._完成标识 != value))
+				{
+					this.On完成标识Changing(value);
+					this.SendPropertyChanging();
+					this._完成标识 = value;
+					this.SendPropertyChanged("完成标识");
+					this.On完成标识Changed();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.项目信息")]
+	public partial class 项目信息 : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private System.Nullable<int> _上级ID;
+		
+		private string _名称;
+		
+		private bool _启用标识;
+		
+		private System.DateTime _创建时间;
+		
+		private EntityRef<项目信息> _项目信息1;
+		
+    #region 可扩展性方法定义
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void On上级IDChanging(System.Nullable<int> value);
+    partial void On上级IDChanged();
+    partial void On名称Changing(string value);
+    partial void On名称Changed();
+    partial void On启用标识Changing(bool value);
+    partial void On启用标识Changed();
+    partial void On创建时间Changing(System.DateTime value);
+    partial void On创建时间Changed();
+    #endregion
+		
+		public 项目信息()
+		{
+			this._项目信息1 = default(EntityRef<项目信息>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_上级ID", DbType="Int")]
+		public System.Nullable<int> 上级ID
+		{
+			get
+			{
+				return this._上级ID;
+			}
+			set
+			{
+				if ((this._上级ID != value))
+				{
+					if (this._项目信息1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.On上级IDChanging(value);
+					this.SendPropertyChanging();
+					this._上级ID = value;
+					this.SendPropertyChanged("上级ID");
+					this.On上级IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_名称", DbType="NChar(60) NOT NULL", CanBeNull=false)]
+		public string 名称
+		{
+			get
+			{
+				return this._名称;
+			}
+			set
+			{
+				if ((this._名称 != value))
+				{
+					this.On名称Changing(value);
+					this.SendPropertyChanging();
+					this._名称 = value;
+					this.SendPropertyChanged("名称");
+					this.On名称Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_启用标识", DbType="Bit NOT NULL")]
+		public bool 启用标识
+		{
+			get
+			{
+				return this._启用标识;
+			}
+			set
+			{
+				if ((this._启用标识 != value))
+				{
+					this.On启用标识Changing(value);
+					this.SendPropertyChanging();
+					this._启用标识 = value;
+					this.SendPropertyChanged("启用标识");
+					this.On启用标识Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_创建时间", DbType="DateTime NOT NULL")]
+		public System.DateTime 创建时间
+		{
+			get
+			{
+				return this._创建时间;
+			}
+			set
+			{
+				if ((this._创建时间 != value))
+				{
+					this.On创建时间Changing(value);
+					this.SendPropertyChanging();
+					this._创建时间 = value;
+					this.SendPropertyChanged("创建时间");
+					this.On创建时间Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="项目信息_项目信息", Storage="_项目信息1", ThisKey="上级ID", OtherKey="ID", IsForeignKey=true)]
+		public 项目信息 上级项目信息
+		{
+			get
+			{
+				return this._项目信息1.Entity;
+			}
+			set
+			{
+				if ((this._项目信息1.Entity != value))
+				{
+					this.SendPropertyChanging();
+					this._项目信息1.Entity = value;
+					this.SendPropertyChanged("上级项目信息");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -86,6 +545,8 @@ namespace WR.Models.ADODdesign
 		
 		private bool _启用标识;
 		
+		private string _简拼;
+		
     #region 可扩展性方法定义
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -96,6 +557,8 @@ namespace WR.Models.ADODdesign
     partial void On姓名Changed();
     partial void On启用标识Changing(bool value);
     partial void On启用标识Changed();
+    partial void On简拼Changing(string value);
+    partial void On简拼Changed();
     #endregion
 		
 		public 人员信息()
@@ -159,6 +622,26 @@ namespace WR.Models.ADODdesign
 					this._启用标识 = value;
 					this.SendPropertyChanged("启用标识");
 					this.On启用标识Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_简拼", DbType="NChar(30) NOT NULL", CanBeNull=false)]
+		public string 简拼
+		{
+			get
+			{
+				return this._简拼;
+			}
+			set
+			{
+				if ((this._简拼 != value))
+				{
+					this.On简拼Changing(value);
+					this.SendPropertyChanging();
+					this._简拼 = value;
+					this.SendPropertyChanged("简拼");
+					this.On简拼Changed();
 				}
 			}
 		}

@@ -55,6 +55,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -144,6 +145,17 @@
     <Content Include="Content\select2\select2.css" />
     <Content Include="Content\select2\select2.js" />
     <Content Include="Content\select2\select2.min.css" />
+    <Content Include="Content\treeview\bootstrap-treeview.min.css" />
+    <Content Include="Scripts\bootstrap-treeview.min.js" />
+    <Content Include="Content\treeview\treeview\app.js" />
+    <Content Include="Content\treeview\treeview\Gruntfile.js" />
+    <Content Include="Content\treeview\treeview\public\css\bootstrap-treeview.css" />
+    <Content Include="Content\treeview\treeview\public\example-dom.html" />
+    <Content Include="Content\treeview\treeview\public\index.html" />
+    <Content Include="Content\treeview\treeview\public\js\bootstrap-treeview.js" />
+    <Content Include="Content\treeview\treeview\screenshot\default.PNG" />
+    <Content Include="Content\treeview\treeview\src\css\bootstrap-treeview.css" />
+    <Content Include="Content\treeview\treeview\src\js\bootstrap-treeview.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="ApplicationInsights.config">
@@ -151,6 +163,7 @@
     </Content>
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\pages\project.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -172,7 +185,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\WR\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -184,7 +196,22 @@
     <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\treeview\treeview\.bowerrc" />
+    <Content Include="Content\treeview\treeview\.gitattributes" />
+    <Content Include="Content\treeview\treeview\.gitignore" />
+    <Content Include="Content\treeview\treeview\.jshintrc" />
+    <Content Include="Content\treeview\treeview\.travis.yml" />
+    <Content Include="Content\treeview\treeview\bower.json" />
+    <Content Include="Content\treeview\treeview\CHANGELOG.md" />
+    <Content Include="Content\treeview\treeview\LICENSE" />
+    <Content Include="Content\treeview\treeview\package.json" />
+    <Content Include="Content\treeview\treeview\README.md" />
     <None Include="Project_Readme.html" />
+    <Content Include="Views\WR\Index.cshtml" />
+    <Content Include="Views\WR\Project.cshtml" />
+    <Content Include="Views\WR\ProjectEdit.cshtml" />
+    <Content Include="Views\Shared\_LayoutEdit.cshtml" />
+    <Content Include="Views\WR\ProjectEmpty.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WR.Core\WR.Tools\WR.Tools.csproj">
