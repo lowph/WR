@@ -6,14 +6,12 @@ using System.Web.Mvc;
 
 namespace WR.WebRoot.Controllers
 {
-    public class HomeController : Controller
+    public class WRController : Controller
     {
-        [AllowAnonymous]
-        public ActionResult Login(string pwd)
+        // GET: WR
+        public ActionResult Index()
         {
-
-
-            return null;
-        }        
+            return View();
+        }
     }
 }

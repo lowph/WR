@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="WRPROJECT" Class="WRProjectDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=47.106.105.168;Initial Catalog=WRPROJECT;Persist Security Info=True;User ID=phproject" SettingsObjectName="WR.Models.ADODdesign.Properties.Settings" SettingsPropertyName="WRPROJECTConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.人员信息" Member="人员信息">
+    <Type Name="人员信息">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="姓名" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="启用标识" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

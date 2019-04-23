@@ -240,3 +240,7 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/WR.Models/WR.Models.ADODdesign/MRDesignModels.edmx.diagram
+/WR.Models/WR.Models.ADODdesign/MRDesignModels.edmx
+/WR.Models/WR.Models.ADODdesign/MRDesignModels.Designer.cs
+/WR.Models/WR.Models.ADODdesign/App.Config
